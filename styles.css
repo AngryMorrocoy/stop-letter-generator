@@ -128,7 +128,7 @@ html, body {
   font-size: inherit;
 }
 
-.button:hover, .button:focus {
+.button:hover {
   background-color: var(--secondary-clr2);
   transform: scale(1.02);
   outline: .2em solid var(--secondary-clr);
