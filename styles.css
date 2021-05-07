@@ -1,0 +1,156 @@
+:root {
+  --primary-clr: hsl(180, 50%, 50%);
+  --secondary-clr: hsl(0, 50%, 50%);
+  --secondary-clr2: hsl(0, 60%, 60%);
+  --tertiary-clr: hsl(270, 50%, 50%);
+}
+
+html, body {
+  height: 100%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (max-height: 740px) {
+  #current-letter {
+    font-size: 300px;
+  }
+}
+
+
+.main {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  position: relative;
+}
+
+.generated-letters-list__li {
+  font-size: 1.5em;
+}
+
+.generated-letters-section {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-clr) var(--secondary-clr2);
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 90%;
+
+  padding: 0 .5rem;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  overflow: hidden;
+
+  font-size: 1rem;
+  background: var(--primary-clr);
+  box-shadow: 0 0 .5em 1px black;
+  z-index: 2;
+}
+
+.section {
+  flex: 1 1 auto;
+}
+
+.main-body {
+  display: flex;
+  flex-flow: row;
+  flex-grow: 1;
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.page-title {
+  text-transform: uppercase;
+}
+
+.generated-letters-section {
+  float: left;
+  text-align: center;
+  width: 20%;
+  padding: 1em 2em 0 3.4em;
+  background-color: var(--secondary-clr);
+}
+
+.current-letter-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  float: right;
+  width: 80%;
+  background-color: var(--tertiary-clr);
+}
+
+.current-letter-section__body {
+  position: relative;
+  padding: 1em 2rem;
+  border-radius: 1em;
+  box-shadow: 0 0 1rem .5rem var(--primary-clr), inset 0 0 1rem .5rem var(--primary-clr);
+}
+
+#current-letter {
+  margin: 1.5em 0;
+  font-size: 3rem;
+}
+
+.button {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--secondary-clr);
+  border: none;
+  border-radius: 1em;
+  padding: .6em .5em;
+  transition: transform 300ms ease-in;
+  transition: box-shadow 300ms ease-in;
+  margin-bottom: 1rem;
+  font-size: inherit;
+}
+
+.button:hover, .button:focus {
+  background-color: var(--secondary-clr2);
+  transform: scale(1.02);
+  outline: .2em solid var(--secondary-clr);
+  outline-offset: 2px;
+}
+
+.bop {
+  animation: bop 1s ease-in-out;
+}
+
+
+@keyframes bop {
+  25% {
+    transform: scale(.3);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
