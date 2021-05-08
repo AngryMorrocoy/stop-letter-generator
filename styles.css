@@ -122,17 +122,17 @@ html, body {
   border: none;
   border-radius: 1em;
   padding: .6em .5em;
-  transition: transform 300ms ease-in;
-  transition: box-shadow 300ms ease-in;
+  transition: box-shadow 250ms ease-in;
   margin-bottom: 1rem;
   font-size: inherit;
 }
 
-.button:hover {
-  background-color: var(--secondary-clr2);
-  transform: scale(1.02);
-  outline: .2em solid var(--secondary-clr);
-  outline-offset: 2px;
+:focus-visible {
+  outline: none;
+}
+
+.button:hover, .button:focus {
+  box-shadow: 0 0 0 2px var(--tertiary-clr), 0 0 0 5px var(--secondary-clr);
 }
 
 .bop {
